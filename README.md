@@ -84,7 +84,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly __available__, in addition to restricting __access__ to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - A load balancer is a device (physical/virtual) that efficiently distributes network traffic to a pool of backend servers, also known as a server farm or server pool based on configured logic. Load balancers provide multiple advantages; including, reduced downtime, scalability, redundancy, flexibility, and efficiency. Direct access to servers within the pool is not required which reduces the attack surface of the system.
 - A Jump Box is our gateway to the azure virtual network. A docker ansible image was used to provision and accesss the web servers in the pool directly. Advantages of this include having 1 point of external access, the ability to move the docker container to other machines, another region or jump point and then reprovision as neccessary. 
 
