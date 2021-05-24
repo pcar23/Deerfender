@@ -6,8 +6,6 @@
 
 The files in this repository were used to configure the network depicted below.
 
-.remove
-
 ![Download Diagram](Images/diagram.svg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, additional components such as metricbeat and filebeat could be added to this playbook. For this project we used specific isolated playbooks for these modules. See the YAML project repository folder for all playbook files.
