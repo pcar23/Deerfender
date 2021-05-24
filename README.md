@@ -78,6 +78,7 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
+<br /><br />
 
 ### Description of the Topology
 
@@ -93,31 +94,41 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name         | Function | IP Address | Operating System |
-|--------------|----------|------------|------------------|
-| Jump Box     | Gateway  | 10.0.0.4   | Linux            |
-| Web Server 1 | Client   | 10.0.0.5   | Linux            |
-| Web Server 2 | Client   | 10.0.0.6   | Linux            |
-| Web Server 3 | Client   | 10.0.0.7   | Linux            |
-| Deerfender   | Gateway  | 10.1.0.4   | Linux            |
+| Name         | Function   | IP Address | Operating System     |
+|--------------|------------|------------|----------------------|
+| Jump Box     | Gateway    | 10.0.0.4   | Linux (Ubuntu 18.04) |
+| Web Server 1 | Web Server | 10.0.0.5   | Linux (Ubuntu 18.04) |
+| Web Server 2 | Web Server | 10.0.0.6   | Linux (Ubuntu 18.04) |
+| Web Server 3 | Web Server | 10.0.0.7   | Linux (Ubuntu 18.04) |
+| Deerfender   | Elk Stack  | 10.1.0.4   | Linux (Ubuntu 18.04) |
+
+<br /><br />
 
 ### Access Policies
-
+__All public IP references have been redacted to ensure privacy of the developers__
+<br /> <br />
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+The Jump Box can accept SSH connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Use your public IP from [here](whatismyip.org)
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+The Load balancer can accept HTTP (tcp:80) connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Use your public IP from [here](whatismyip.org)
+
+Machines within the network can only be accessed via SSH from the Ansible container hosted on the Jump Box machine (10.0.0.4).
+- The ELK machine is only accessible from the ansible container on the Jump Box via SSH using the the public/private keys created during initial setup.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name         | Publicly Available     | IP Address                        |
+|--------------|------------------------|-----------------------------------|
+| Jump Box     | Yes (SSH ONLY - 22)    | 10.0.0.4                          |
+| Web Server 1 | No                     | 40.127.75.124 - via Load Balancer |
+| Web Server 2 | No                     | 40.127.75.124 - via Load Balancer |
+| Web Server 3 | No                     | 40.127.75.124 - via Load Balancer |
+| Deerfender   | Yes (HTTP ONLY - 5601) | XXX.XXX.XXX.XXX                   |
+
+<br /><br />
 
 ### Elk Configuration
 
