@@ -1,3 +1,6 @@
+The Deerfenders have struck again, view the ultimate repository for all things moose-related.
+
+
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
