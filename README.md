@@ -159,13 +159,16 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 - Filebeat
-  - Data Collected: 
-  - Example: SSH Login Attempt
+  - Data Collected: Log data including SSH logins, sudo commands run, and all other log data from the specified locations
+  - Example: Sudo Commands
+
+  ![](Images/filebeat.png)
+  
 - Metricbeat
-  - Data Collected:
-  - Example: High CPU Usage
+  - Data Collected: System statistics such as CPU Usage, Memory, Network Activity, Disk IO, and Docker Containers per Host
+  - Example: CPU/Memory Usage
 
-
+![](Images/metricbeat.png)
 
 <br /><br />
 
@@ -173,9 +176,16 @@ We have installed the following Beats on these machines:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the YAML files to your /etc/ansible/roles folder. <a href="YAML/">(example)</a>
+- Update the /etc/ansible/hosts file to include hosts groups and internal IP addresses <a href="Images/hosts.png">(example)</a>
+- Please ensure the interpreter is set to ```ansible_python_interpreter=/usr/bin/python3```
+- Run the playbook, and navigate to [ELK SERVER IP:5601] to check that the installation worked as expected.
+
+
+
+
+
+
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
