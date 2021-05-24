@@ -9,7 +9,7 @@ The files in this repository were used to configure the network depicted below.
 <img src="Images/diagram.png" />
 ![Download Diagram](Images/diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, additional components such as metricbeat and filebeat could be added to this playbook. For this project we used specific isolated playbooks for these modules ![See other playbooks](Scripts/)
 
   ```
 - name: Configure Elk VM with Docker
@@ -83,15 +83,15 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly __available__, in addition to restricting __access__ to the network.
+- A load balancer is a device (physical/virtual) that efficiently distributes network traffic to a pool of backend servers, also known as a server farm or server pool based on configured logic. Load balancers provide multiple advantages; including, reduced downtime, scalability, redundancy, flexibility, and efficiency. Direct access to servers within the pool is not required which reduces the attack surface of the system.
+- A Jump Box is our gateway to the azure virtual network. A docker ansible image was used to provision and accesss the web servers in the pool directly. Advantages of this include having 1 point of external access, the ability to move the docker container to other machines, another region or jump point and then reprovision as neccessary. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the resources and system logs.
+- Filebeat monitors log files or specified locations. Once the data is collected it is then forwarded to Elasticsearch for visualisation via Kibana thereafter.
+- Metricbeat collects statistics and metric data from the respective operating systems periodically before it's sent to Elasticsearch to be viewed via Kibana.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name         | Function | IP Address | Operating System |
 |--------------|----------|------------|------------------|
