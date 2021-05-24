@@ -95,11 +95,11 @@ The configuration details of each machine may be found below.
 
 | Name         | Function   | IP Address | Operating System     |
 |--------------|------------|------------|----------------------|
-| Jump Box     | Gateway    | 10.0.0.4   | Linux (Ubuntu 18.04) |
-| Web Server 1 | Web Server | 10.0.0.5   | Linux (Ubuntu 18.04) |
-| Web Server 2 | Web Server | 10.0.0.6   | Linux (Ubuntu 18.04) |
-| Web Server 3 | Web Server | 10.0.0.7   | Linux (Ubuntu 18.04) |
-| Deerfender   | Elk Stack  | 10.1.0.4   | Linux (Ubuntu 18.04) |
+| Jump Box     | Gateway    | 10.0.1.4   | Linux (Ubuntu 18.04) |
+| Web Server 1 | Web Server | 10.0.1.5   | Linux (Ubuntu 18.04) |
+| Web Server 2 | Web Server | 10.0.1.6   | Linux (Ubuntu 18.04) |
+| Web Server 3 | Web Server | 10.0.1.7   | Linux (Ubuntu 18.04) |
+| Deerfender   | Elk Stack  | 10.1.0.6   | Linux (Ubuntu 18.04) |
 
 <br />
 
@@ -122,7 +122,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name         | Publicly Available     | IP Address                        |
 |--------------|------------------------|-----------------------------------|
-| Jump Box     | Yes (SSH ONLY - 22)    | 10.0.0.4                          |
+| Jump Box     | Yes (SSH ONLY - 22)    | 10.0.1.4                          |
 | Web Server 1 | No                     | 40.127.75.124 - via Load Balancer |
 | Web Server 2 | No                     | 40.127.75.124 - via Load Balancer |
 | Web Server 3 | No                     | 40.127.75.124 - via Load Balancer |
@@ -154,9 +154,9 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- 10.0.0.5 - Web Server 1
-- 10.0.0.6 - Web Server 2
-- 10.0.0.7 - Web Server 3
+- 10.0.1.5 - Web Server 1
+- 10.0.1.6 - Web Server 2
+- 10.0.1.7 - Web Server 3
 
 We have installed the following Beats on these machines:
 - Filebeat
