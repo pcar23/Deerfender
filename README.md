@@ -14,7 +14,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - _TODO: Enter the playbook file._
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -36,12 +36,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name         | Function | IP Address | Operating System |
+|--------------|----------|------------|------------------|
+| Jump Box     | Gateway  | 10.0.0.4   | Linux            |
+| Web Server 1 | Client   | 10.0.0.5   | Linux            |
+| Web Server 2 | Client   | 10.0.0.6   | Linux            |
+| Web Server 3 | Client   | 10.0.0.7   | Linux            |
+| Deerfender   | Gateway  | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
