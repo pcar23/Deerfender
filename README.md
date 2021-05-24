@@ -6,7 +6,6 @@
 
 The files in this repository were used to configure the network depicted below.
 
-<img src="Images/diagram.svg" />
 ![Download Diagram](Images/diagram.svg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, additional components such as metricbeat and filebeat could be added to this playbook. For this project we used specific isolated playbooks for these modules ![See other playbooks](Scripts/)
@@ -160,10 +159,13 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 - Filebeat
+  - Data Collected: 
+  - Example: SSH Login Attempt
 - Metricbeat
+  - Data Collected:
+  - Example: High CPU Usage
 
-These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
 
 <br /><br />
 
