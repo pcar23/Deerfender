@@ -8,12 +8,11 @@ The files in this repository were used to configure the network depicted below.
 
 ![Download Diagram](Images/diagram.svg)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, additional components such as metricbeat and filebeat could be added to this playbook. For this project we used specific isolated playbooks for these modules ![See other playbooks](Scripts/)
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, additional components such as metricbeat and filebeat could be added to this playbook. For this project we used specific isolated playbooks for these modules. See the YAML project repository folder for all playbook files.
 
   ```
 - name: Configure Elk VM with Docker
   hosts: elk
-  remote_user: sysadmin
   become: true
   tasks:
     # Use apt module
@@ -56,7 +55,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
         image: sebp/elk:761
         state: started
         restart_policy: always
-        # Please list the ports that ELK runs on
+        # Ports that ELK runs on
         published_ports:
           - 5601:5601
           - 9200:9200
@@ -76,6 +75,7 @@ This document contains the following details:
   - Beats in Use
   - Machines Being Monitored
 - How to Use the Ansible Build
+- Some extra scripts to help you out!
 
 <br /><br />
 
@@ -83,9 +83,9 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- A load balancer is a device (physical/virtual) that efficiently distributes network traffic to a pool of backend servers, also known as a server farm or server pool based on configured logic. Load balancers provide multiple advantages; including, reduced downtime, scalability, redundancy, flexibility, and efficiency. Direct access to servers within the pool is not required which reduces the attack surface of the system.
-- A Jump Box is our gateway to the azure virtual network. A docker ansible image was used to provision and accesss the web servers in the pool directly. Advantages of this include having 1 point of external access, the ability to move the docker container to other machines, another region or jump point and then reprovision as neccessary. 
+Load balancing ensures that the application will be highly available, in addition to restricting direct access to the network.
+- A load balancer is a device (physical or virtual) that efficiently distributes network traffic based on configured logic to a pool of backend servers, also known as a server farm or server pool. Load balancers provide multiple advantages; including, availability, scalability, redundancy, and efficiency. Direct access to servers within the pool is not required nor available which reduces the attack surface of the web service.
+- The Jump Box acts as a dual purpose control node and is the gateway to the Azure virtual network. A docker ansible image was implemented to provision and accesss the web servers in the hosts group. Advantages of this include having one point of external access and the ability to automate the provisioning of new servers / update of existing servers. By using an ansible docker container, this element is more portable where an Adminisntrator could move the docker container to other machines, another region or jump point and then reprovision as neccessary. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the resources and system logs.
 - Filebeat monitors log files or specified locations. Once the data is collected it is then forwarded to Elasticsearch for visualisation via Kibana thereafter.
