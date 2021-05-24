@@ -6,8 +6,8 @@
 
 The files in this repository were used to configure the network depicted below.
 
-<img src="Images/diagram.png" />
-![Download Diagram](Images/diagram.png)
+<img src="Images/diagram.svg" />
+![Download Diagram](Images/diagram.svg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, additional components such as metricbeat and filebeat could be added to this playbook. For this project we used specific isolated playbooks for these modules ![See other playbooks](Scripts/)
 
@@ -132,26 +132,35 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because of the following:
+- Skill Level: Little to zero coding skills required
+- Consistency: The ability to remotely configure and setup multiple instances with the exact same environment at ease by just specifying the host group.
+- Flexibility: Same configurations are possible on any environment no matter where it is being deployed.
+- Simple to Learn: Easy to use for beginners and professionals, being in YAML it also super easy to read and understand.
+- Dependancies: No agents are required to be setup as dependancies on the remote machines
+- Timeliness: Quick implementation of services and applications.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Docker and Python3 using the apt module
+- Increase ELK Server's virtual memory via Systemctl
+- After running Docker via pip, install the ELK image using Docker Container. __(Remember to publish relevant ports!)__
+- Enabling Docker Service on boot to ensure availability.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker-ps.png)
 
 <br /><br />
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- 10.0.0.5 - Web Server 1
+- 10.0.0.6 - Web Server 2
+- 10.0.0.7 - Web Server 3
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
