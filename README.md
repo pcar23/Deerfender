@@ -189,3 +189,5 @@ SSH into the control node and follow the steps below:
 - Download the tar zip file with all the required files to be run on your Jump Box <a href="">here</a>, using ```curl -L -O https://github.com/ElphaX/Deerfender/deerfender.tar.gz > deerfender.tar.gz```
 - Extract the compressed file using the following command: ```tar -zxvf deerfender.tar.gz```
 - Enjoy! You've got the files required to have this environment up and running <br /><img src="https://emojis.slackmojis.com/emojis/images/1531847402/4229/blob-clap.gif" width=50px/>
+
+Edwin
