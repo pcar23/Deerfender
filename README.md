@@ -69,7 +69,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
         name: docker
         enabled: yes
   ```
-
+<br/><br/>
 This document contains the following details:
 - Description of the Topology
 - Access Policies
@@ -144,6 +144,8 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
+<br /><br />
+
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
@@ -153,6 +155,8 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
+<br /><br />
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
