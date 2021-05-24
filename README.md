@@ -6,6 +6,8 @@
 
 The files in this repository were used to configure the network depicted below.
 
+.remove
+
 ![Download Diagram](Images/diagram.svg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, additional components such as metricbeat and filebeat could be added to this playbook. For this project we used specific isolated playbooks for these modules. See the YAML project repository folder for all playbook files.
@@ -189,5 +191,3 @@ SSH into the control node and follow the steps below:
 - Download the tar zip file with all the required files to be run on your Jump Box <a href="">here</a>, using ```curl -L -O https://github.com/ElphaX/Deerfender/deerfender.tar.gz > deerfender.tar.gz```
 - Extract the compressed file using the following command: ```tar -zxvf deerfender.tar.gz```
 - Enjoy! You've got the files required to have this environment up and running <br /><img src="https://emojis.slackmojis.com/emojis/images/1531847402/4229/blob-clap.gif" width=50px/>
-
-Edwin
