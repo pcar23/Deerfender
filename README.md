@@ -1,6 +1,6 @@
 The Deerfenders have struck again, view the ultimate repository for all things moose-related.
 
-(Images\the-deerfender.gif)
+<img src="Images\the-deerfender.gif" />
 
 ## Automated ELK Stack Deployment
 
