@@ -1,6 +1,6 @@
 # The Deerfenders have struck again, view the ultimate repository for all things moose-related.
 
-<img src="Images\the-deerfender.gif" />
+<img src="Images\the-deerfender.gif" width=800/>
 
 ## Automated ELK Stack Deployment
 
@@ -68,7 +68,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
         name: docker
         enabled: yes
   ```
-<br/><br/>
+<br/>
 This document contains the following details:
 - Description of the Topology
 - Access Policies
@@ -101,11 +101,12 @@ The configuration details of each machine may be found below.
 | Web Server 3 | Web Server | 10.0.0.7   | Linux (Ubuntu 18.04) |
 | Deerfender   | Elk Stack  | 10.1.0.4   | Linux (Ubuntu 18.04) |
 
-<br /><br />
+<br />
 
 ### Access Policies
 __All public IP references have been redacted to ensure privacy of the developers__
-<br /> <br />
+<br />
+
 The machines on the internal network are not exposed to the public Internet. 
 
 The Jump Box can accept SSH connections from the Internet. Access to this machine is only allowed from the following IP addresses:
@@ -127,7 +128,7 @@ A summary of the access policies in place can be found in the table below.
 | Web Server 3 | No                     | 40.127.75.124 - via Load Balancer |
 | Deerfender   | Yes (HTTP ONLY - 5601) | XXX.XXX.XXX.XXX                   |
 
-<br /><br />
+<br />
 
 ### Elk Configuration
 
@@ -147,9 +148,9 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker-ps.png)
+![](Images/docker-ps.png)
 
-<br /><br />
+<br />
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -177,19 +178,14 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the YAML files to your /etc/ansible/roles folder. <a href="YAML/">(example)</a>
-- Update the /etc/ansible/hosts file to include hosts groups and internal IP addresses <a href="Images/hosts.png">(example)</a>
+- Update the /etc/ansible/hosts file to include hosts groups and internal IP addresses for each group <a href="Images/hosts.png">(example)</a>
 - Please ensure the interpreter is set to ```ansible_python_interpreter=/usr/bin/python3```
 - Run the playbook, and navigate to [ELK SERVER IP:5601] to check that the installation worked as expected.
 
+<br />
 
-
-
-
-
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+### _Secret Scripts_
+- Navigate to a folder where you can store your sample scripts and YAML files
+- Download the tar zip file with all the required files to be run on your Jump Box <a href="">here</a>
+- Extract the compressed file using the following command: ```tar -zxvf deerfenders.tar.gz```
+- Enjoy! You've got the files required to have this environment up and running <br /><img src="https://emojis.slackmojis.com/emojis/images/1531847402/4229/blob-clap.gif" width=50px/>
