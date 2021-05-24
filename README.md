@@ -110,10 +110,10 @@ __All public IP references have been redacted to ensure privacy of the developer
 The machines on the internal network are not exposed to the public Internet. 
 
 The Jump Box can accept SSH connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- Use your public IP from [here](whatismyip.org)
+- Use your public IP from [here](https://www.whatismyip.com/)
 
 The Load balancer can accept HTTP (tcp:80) connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- Use your public IP from [here](whatismyip.org)
+- Use your public IP from [here](https://www.whatismyip.com/)
 
 Machines within the network can only be accessed via SSH from the Ansible container hosted on the Jump Box machine (10.0.0.4).
 - The ELK machine is only accessible from the ansible container on the Jump Box via SSH using the the public/private keys created during initial setup.
