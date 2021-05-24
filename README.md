@@ -185,7 +185,7 @@ SSH into the control node and follow the steps below:
 <br />
 
 ### _Secret Scripts_
-- Navigate to a folder where you can store your sample scripts and YAML files
-- Download the tar zip file with all the required files to be run on your Jump Box <a href="">here</a>
-- Extract the compressed file using the following command: ```tar -zxvf deerfenders.tar.gz```
+- Navigate to a folder where you can store your sample scripts and YAML files, use ```cd <chosen directory>```
+- Download the tar zip file with all the required files to be run on your Jump Box <a href="">here</a>, using ```curl -L -O https://github.com/ElphaX/Deerfender/deerfender.tar.gz > deerfender.tar.gz```
+- Extract the compressed file using the following command: ```tar -zxvf deerfender.tar.gz```
 - Enjoy! You've got the files required to have this environment up and running <br /><img src="https://emojis.slackmojis.com/emojis/images/1531847402/4229/blob-clap.gif" width=50px/>
