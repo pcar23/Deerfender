@@ -93,13 +93,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name                  | Function   | IP Address | Operating System     |
-|-----------------------|------------|------------|----------------------|
-| Jump-Box-Provisioner  | Gateway    | 10.0.0.4   | Linux (Ubuntu 18.04) |
-| Web-1                 | Web Server | 10.0.0.7   | Linux (Ubuntu 18.04) |
-| Web-2                 | Web Server | 10.0.0.8   | Linux (Ubuntu 18.04) |
-| Web-3                 | Web Server | 10.0.0.9   | Linux (Ubuntu 18.04) |
-| Deerfender-VM         | Elk Stack  | 10.1.0.4   | Linux (Ubuntu 18.04) |
+| Name                  | Function                     | IP Address | Operating System     |
+|-----------------------|------------------------------|------------|----------------------|
+| Jump-Box-Provisioner  | Gateway & Ansible Provisioner| 10.0.0.4   | Linux (Ubuntu 18.04) |
+| Web-1                 | Web Server                   | 10.0.0.7   | Linux (Ubuntu 18.04) |
+| Web-2                 | Web Server                   | 10.0.0.8   | Linux (Ubuntu 18.04) |
+| Web-3                 | Web Server                   | 10.0.0.9   | Linux (Ubuntu 18.04) |
+| Deerfender-VM         | Elk Stack                    | 10.1.0.4   | Linux (Ubuntu 18.04) |
 
 <br />
 
