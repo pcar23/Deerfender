@@ -107,16 +107,16 @@ The configuration details of each machine may be found below.
 __All public IP references have been redacted to ensure privacy of the developers__
 <br />
 
-The machines on the internal network are not exposed to the public Internet. 
+The machines on the internal network are not exposed to the public Internet. Both the DeefFender-VM-nsg and Red_Team_Admin_Rules Network Security Groups in Azure are configured to deny external access to these Virtual Machines on the internal network. The only extermal access is explained below. 
 
-The Jump Box can accept SSH connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+The Jump Box (Jump-Box-Provisioner) can accept SSH connections (tcp:22) from the Internet. Access to this machine is only allowed from the following IP address: 180.x.x.38 <i>(semi-redacted for privacy)</i>.
 - Use your public IP from [here](https://www.whatismyip.com/)
 
-The Load balancer can accept HTTP (tcp:80) connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+The Load balancer (DVWA-LB) can accept HTTP (tcp:80) connections from the Internet. Access to the load balancer is only allowed from the following IP address: 180.x.x.38 <i>(semi-redacted for privacy)</i>.
 - Use your public IP from [here](https://www.whatismyip.com/)
 
 Machines within the network can only be accessed via SSH from the Ansible container hosted on the Jump Box machine (10.0.0.4).
-- The ELK machine is only accessible from the ansible container on the Jump Box via SSH using the the public/private keys created during initial setup.
+- The ELK stack virtual machine (Deerfender-VM) is only accessible from the ansible container on the Jump Box via SSH using the the public/private keys created during initial setup.
 
 A summary of the access policies in place can be found in the table below.
 
@@ -154,9 +154,9 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- 10.0.0.5 - Web Server 1 (Web-1)
-- 10.0.0.6 - Web Server 2 (Web-2)
-- 10.0.0.7 - Web Server 3 (Web-3)
+- 10.0.0.7 - Web Server 1 (Web-1)
+- 10.0.0.8 - Web Server 2 (Web-2)
+- 10.0.0.9 - Web Server 3 (Web-3)
 
 We have installed the following Beats on these machines:
 - Filebeat
