@@ -93,13 +93,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name         | Function   | IP Address | Operating System     |
-|--------------|------------|------------|----------------------|
-| Jump Box     | Gateway    | 10.0.0.4   | Linux (Ubuntu 18.04) |
-| Web Server 1 | Web Server | 10.0.0.5   | Linux (Ubuntu 18.04) |
-| Web Server 2 | Web Server | 10.0.0.6   | Linux (Ubuntu 18.04) |
-| Web Server 3 | Web Server | 10.0.0.7   | Linux (Ubuntu 18.04) |
-| Deerfender   | Elk Stack  | 10.1.0.4   | Linux (Ubuntu 18.04) |
+| Name                  | Function   | IP Address | Operating System     |
+|-----------------------|------------|------------|----------------------|
+| Jump-Box-Provisioner  | Gateway    | 10.0.0.4   | Linux (Ubuntu 18.04) |
+| Web-1                 | Web Server | 10.0.0.7   | Linux (Ubuntu 18.04) |
+| Web-2                 | Web Server | 10.0.0.8   | Linux (Ubuntu 18.04) |
+| Web-3                 | Web Server | 10.0.0.9   | Linux (Ubuntu 18.04) |
+| Deerfender-VM         | Elk Stack  | 10.1.0.4   | Linux (Ubuntu 18.04) |
 
 <br />
 
@@ -120,13 +120,13 @@ Machines within the network can only be accessed via SSH from the Ansible contai
 
 A summary of the access policies in place can be found in the table below.
 
-| Name         | Publicly Available     | IP Address                        |
-|--------------|------------------------|-----------------------------------|
-| Jump Box     | Yes (SSH ONLY - 22)    | 10.0.0.4                          |
-| Web Server 1 | No                     | 40.127.75.124 - via Load Balancer |
-| Web Server 2 | No                     | 40.127.75.124 - via Load Balancer |
-| Web Server 3 | No                     | 40.127.75.124 - via Load Balancer |
-| Deerfender   | Yes (HTTP ONLY - 5601) | XXX.XXX.XXX.XXX                   |
+| Name         | Publicly Available     | IP Address                       |
+|--------------|------------------------|----------------------------------|
+| Jump Box     | Yes (SSH ONLY - 22)    | 10.0.0.4                         |
+| Web Server 1 | No                     | 40.127.85.88 - via Load Balancer |
+| Web Server 2 | No                     | 40.127.85.88 - via Load Balancer |
+| Web Server 3 | No                     | 40.127.85.88 - via Load Balancer |
+| Deerfender   | Yes (HTTP ONLY - 5601) | 20.36.44.15                      |
 
 <br />
 
@@ -154,9 +154,9 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- 10.0.0.5 - Web Server 1
-- 10.0.0.6 - Web Server 2
-- 10.0.0.7 - Web Server 3
+- 10.0.0.5 - Web Server 1 (Web-1)
+- 10.0.0.6 - Web Server 2 (Web-2)
+- 10.0.0.7 - Web Server 3 (Web-3)
 
 We have installed the following Beats on these machines:
 - Filebeat
